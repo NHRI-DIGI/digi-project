@@ -1,0 +1,46 @@
+TargetData
+|-- fail_indQC.txt
+|-- finalTarget.bed
+|-- finalTarget.bim
+|-- finalTarget.fam
+|-- finalTarget.log
+|-- finalTarget.nosex
+|-- LDr2.log
+|-- LDr2.nosex
+|-- LDr2.prune.in
+|-- LDr2.prune.out
+`-- process
+    |-- chr_pos
+    |-- chr_xym_weightloss_6.vcf
+    |-- fail_het_ind.txt
+    |-- fail_imiss_ind.txt
+    |-- het_indQC.het
+    |-- het_indQC.log
+    |-- het_indQC.nosex
+    |-- weightloss_6Header_2.txt
+    |-- weightloss_6Headers.txt
+    |-- weightloss_6.vcf
+    |-- indQC.bed
+    |-- indQC.bim
+    |-- indQC.fam
+    |-- indQC.log
+    |-- indQC_nodup_chr_xym_weightloss_6.bed
+    |-- indQC_nodup_chr_xym_weightloss_6.bim
+    |-- indQC_nodup_chr_xym_weightloss_6.fam
+    |-- indQC_nodup_chr_xym_weightloss_6.log
+    |-- indQC_nodup_chr_xym_weightloss_6.nosex
+    |-- indQC_nodup_chr_xym_weightloss_6.vcf
+    |-- indQC.nosex
+    |-- miss_indQC.imiss
+    |-- miss_indQC.lmiss
+    |-- miss_indQC.log
+    |-- miss_indQC.nosex
+    |-- nodup_chr_xym_weightloss_6.vcf
+    |-- noh_chr_xym_weightloss_6.vcf
+    |-- noh_xym_weightloss_6.vcf
+    |-- snpQC_rowN.txt
+    |-- snpQC_target.fam
+    |-- snpQC_target.log
+    |-- snpQC_target.nosex
+    |-- snpQC_target.snplist
+    `-- xym_weightloss_6.vcf
