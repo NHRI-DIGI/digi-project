@@ -7,4 +7,10 @@
 * [02. Merge VCFs](https://drive.google.com/file/d/1sZdSV-8TLwcWQc-yRpvs_JdWcuU5kd5H/view?usp=sharing)
 * [03. Base and target data modeling](https://drive.google.com/file/d/18KthfDxLez_lw4BWFVi9xEGYXKlWS8h9/view?usp=sharing)
 * [04. PRS modeling](https://drive.google.com/file/d/1yTtkiKQ2A2zDPW5WFr5ZyiUgDjLSUbKE/view?usp=sharing)
+* [05. PRS analysis](https://drive.google.com/file/d/1MREkdlL0uQahr_I_-YSwTzFFkdznOpYN/view?usp=sharing)
+---
+## Homework
+1. HBOC (60 controls and 60 cases) and hypertension (136 cases and 152 cases) PRS analysis
+2. Upload image files --> 個人Output/Laptop_output/Image/
+3. Deadline: 2022/09/30 12:00
 ---
