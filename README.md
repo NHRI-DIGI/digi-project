@@ -10,7 +10,7 @@
 * [05. PRS analysis](https://drive.google.com/file/d/1MREkdlL0uQahr_I_-YSwTzFFkdznOpYN/view?usp=sharing)
 ---
 ## Homework
-1. HBOC (60 controls and 60 cases) and hypertension (136 cases and 152 cases) PRS analysis
-2. Upload image files --> 個人Output/Laptop_output/Image/
+1. HBOC (60 controls and 60 cases) and hypertension (136 cases and 152 cases) PRS analysis, after competed merge files, please remove VCFs, recode.VCFs and log files.
+2. Upload image files (includes density plot and fail QCs plot)--> 個人Output/Laptop_output/Image/
 3. Deadline: 2022/09/30 12:00
 ---
