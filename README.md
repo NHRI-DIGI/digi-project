@@ -8,7 +8,7 @@
 * [03. Base and target data modeling](https://drive.google.com/file/d/18KthfDxLez_lw4BWFVi9xEGYXKlWS8h9/view?usp=sharing)
 * [04. PRS modeling](https://drive.google.com/file/d/1yTtkiKQ2A2zDPW5WFr5ZyiUgDjLSUbKE/view?usp=sharing)
 * [05. PRS analysis](https://drive.google.com/file/d/1MREkdlL0uQahr_I_-YSwTzFFkdznOpYN/view?usp=sharing)
-* [06.期末報告-初版](https://drive.google.com/file/d/1f7KzIgnHmyusrzxO64g8S7WH1iRkmXKl/view?usp=sharing)
+* [06. 期末報告-初版](https://drive.google.com/file/d/1f7KzIgnHmyusrzxO64g8S7WH1iRkmXKl/view?usp=sharing)
 ---
 ## Homework
 1. HBOC (60 controls and 60 cases) and hypertension (136 cases and 152 cases) PRS analysis, after competed merge files, please remove VCFs, recode.VCFs and log files.
