@@ -42,7 +42,7 @@ sed -e 's/^chr//' -i process/chr_pos
 #######################################
 awk 'FNR==NR{a[NR]=$0;next} {$3=a[FNR]}1' OFS="\t" process/chr_pos  process/xym_"$phenoarray".vcf > process/noh_chr_xym_"$phenoarray".vcf
 ( sed 1q process/"$phenoarray"_Header_2.txt; sed 1d process/noh_chr_xym_"$phenoarray".vcf ) > process/chr_xym_"$phenoarray".vcf
-(head -n 1 process/chr_xym_"$phenoarray".vcf && tail -n +2 process/chr_xym_"$phenoarray".vcf | sort -u  -k3,3 ) > process/nodup_chr_xym_"$phenoarray".vcf
+awk '{seen[$3]++; if(seen[$3]==1){ print}}' chr_xym_"$phenoarray".vcf > process/nodup_chr_xym_"$phenoarray".vcf
 
 # Indiviual QC
 ${pathway}Input/Script/bin/plink --vcf process/nodup_chr_xym_"$phenoarray".vcf --make-bed --out process/indQC
