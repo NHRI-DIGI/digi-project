@@ -9,6 +9,7 @@
 * [04. PRS modeling](https://drive.google.com/file/d/1yTtkiKQ2A2zDPW5WFr5ZyiUgDjLSUbKE/view?usp=sharing)
 * [05. PRS analysis](https://drive.google.com/file/d/1MREkdlL0uQahr_I_-YSwTzFFkdznOpYN/view?usp=sharing)
 * [06. 期末報告-updated](https://drive.google.com/file/d/1OIcuiDnAa3DLSITdyywjO4_TITbJDzoO/view?usp=sharing)
+* [Case_study_PRS+modeling](https://drive.google.com/file/d/1qaW9lnW_eUGy1f2MBedePmppZzWs7UPg/view?usp=sharing)
 ---
 ## Homework
 1. Homework_PRS_calculations. (Deadline: 2022/08/29) Email to 林育如博士 yuhrulin@nhri.edu.tw (https://docs.google.com/document/d/1o9uQByk1hWhd-VW-upuu7u7nWpJnpWgl/edit?usp=sharing&ouid=116516998603299319258&rtpof=true&sd=true)
