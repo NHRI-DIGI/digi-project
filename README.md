@@ -12,6 +12,5 @@
 * [Case_study_PRS+modeling](https://drive.google.com/file/d/1qaW9lnW_eUGy1f2MBedePmppZzWs7UPg/view?usp=sharing)
 ---
 ## Homework
-1. Homework_PRS_calculations. (Deadline: 2022/08/29) Email to 林育如博士 yuhrulin@nhri.edu.tw (https://docs.google.com/document/d/1o9uQByk1hWhd-VW-upuu7u7nWpJnpWgl/edit?usp=sharing&ouid=116516998603299319258&rtpof=true&sd=true)
-2. Homework_PRS_analysis. (Deadline: 2022/09/30) Email to 鄭光桓 kenny77527@gapp.nthu.edu.tw (https://docs.google.com/document/d/1N4g_WctcKkV7l4Zm6anctKHQFkP89XlH/edit?usp=sharing&ouid=116516998603299319258&rtpof=true&sd=true)
+1. Homework_rare_disease. (Deadline: 2023/08/30) Email to 翁惠瑩 iffive@gmail.com (https://drive.google.com/file/d/1HlF6EXqez9Uc70LV7yzxLnJ21JJhDhzc/view?usp=sharing)
 ---
