@@ -1,0 +1,77 @@
+Basedata
+├── CKD_24
+│   ├── ambRm_chi.assoc
+│   ├── chi.assoc
+│   ├── chi.log
+│   ├── chi.nosex
+│   ├── CKD_24_p.bed
+│   ├── CKD_24_p.bim
+│   ├── CKD_24_p.fam
+│   ├── CKD_24_p.log
+│   ├── CKD_24_p.nosex
+│   ├── ef_al_process
+│   │   ├── case.bed
+│   │   ├── case.bim
+│   │   ├── case.fam
+│   │   ├── case.log
+│   │   ├── case.nosex
+│   │   ├── case.txt
+│   │   ├── case.vcf
+│   │   ├── CKD_24_p.log
+│   │   ├── CKD_24_p.nosex
+│   │   ├── CKD_24_p.txt
+│   │   ├── CKD_24_p.vcf
+│   │   ├── cont.bed
+│   │   ├── cont.bim
+│   │   ├── cont.fam
+│   │   ├── cont.log
+│   │   ├── cont.nosex
+│   │   ├── cont.txt
+│   │   ├── cont.vcf
+│   │   ├── efp_ct.txt
+│   │   ├── ef.txt
+│   │   ├── freq_case.frq
+│   │   ├── freq_case.log
+│   │   ├── freq_case.nosex
+│   │   ├── freq_cont.frq
+│   │   ├── freq_cont.log
+│   │   ├── freq_cont.nosex
+│   │   └── pos_CKD_24_p.txt
+│   ├── ef_ambRm_chi.assoc
+│   └── finalBase.txt
+├── fail_indQC.txt
+├── process
+│   ├── chr_pos
+│   ├── chr_xym_CKD_24.vcf
+│   ├── CKD_24_Header_2.txt
+│   ├── CKD_24_Headers.txt
+│   ├── CKD_24.vcf
+│   ├── fail_het_ind.txt
+│   ├── fail_imiss_ind.txt
+│   ├── het_indQC.het
+│   ├── het_indQC.log
+│   ├── het_indQC.nosex
+│   ├── indQC.bed
+│   ├── indQC.bim
+│   ├── indQC.fam
+│   ├── indQC.log
+│   ├── indQC_nodup_chr_xym_CKD_24.bed
+│   ├── indQC_nodup_chr_xym_CKD_24.bim
+│   ├── indQC_nodup_chr_xym_CKD_24.fam
+│   ├── indQC_nodup_chr_xym_CKD_24.log
+│   ├── indQC_nodup_chr_xym_CKD_24.nosex
+│   ├── indQC_nodup_chr_xym_CKD_24.vcf
+│   ├── indQC.nosex
+│   ├── miss_indQC.imiss
+│   ├── miss_indQC.lmiss
+│   ├── miss_indQC.log
+│   ├── miss_indQC.nosex
+│   ├── nodup_chr_xym_CKD_24.vcf
+│   ├── noh_chr_xym_CKD_24.vcf
+│   ├── noh_xym_CKD_24.vcf
+│   ├── snpQC_rowN.txt
+│   └── xym_CKD_24.vcf
+├── snpQC_base.fam
+├── snpQC_base.log
+├── snpQC_base.nosex
+└── snpQC_base.snplist
