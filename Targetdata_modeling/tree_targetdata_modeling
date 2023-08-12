@@ -1,0 +1,46 @@
+TargetData
+├── fail_indQC.txt
+├── finalTarget.bed
+├── finalTarget.bim
+├── finalTarget.fam
+├── finalTarget.log
+├── finalTarget.nosex
+├── LDr2.log
+├── LDr2.nosex
+├── LDr2.prune.in
+├── LDr2.prune.out
+└── process
+    ├── chr_pos
+    ├── chr_xym_CKD_12.vcf
+    ├── CKD_12Header_2.txt
+    ├── CKD_12Headers.txt
+    ├── CKD_12.vcf
+    ├── fail_het_ind.txt
+    ├── fail_imiss_ind.txt
+    ├── het_indQC.het
+    ├── het_indQC.log
+    ├── het_indQC.nosex
+    ├── indQC.bed
+    ├── indQC.bim
+    ├── indQC.fam
+    ├── indQC.log
+    ├── indQC_nodup_chr_xym_CKD_12.bed
+    ├── indQC_nodup_chr_xym_CKD_12.bim
+    ├── indQC_nodup_chr_xym_CKD_12.fam
+    ├── indQC_nodup_chr_xym_CKD_12.log
+    ├── indQC_nodup_chr_xym_CKD_12.nosex
+    ├── indQC_nodup_chr_xym_CKD_12.vcf
+    ├── indQC.nosex
+    ├── miss_indQC.imiss
+    ├── miss_indQC.lmiss
+    ├── miss_indQC.log
+    ├── miss_indQC.nosex
+    ├── nodup_chr_xym_CKD_12.vcf
+    ├── noh_chr_xym_CKD_12.vcf
+    ├── noh_xym_CKD_12.vcf
+    ├── snpQC_rowN.txt
+    ├── snpQC_target.fam
+    ├── snpQC_target.log
+    ├── snpQC_target.nosex
+    ├── snpQC_target.snplist
+    └── xym_CKD_12.vcf
