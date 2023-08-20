@@ -8,7 +8,7 @@
 * [03. Base and target data modeling](https://drive.google.com/file/d/11in4L0XSwohT2wdj9LDqJcKKU8Sub8if/view?usp=sharing)
 * [04. PRS modeling](https://drive.google.com/file/d/1HJG8N4YSJpKcZcPMOQusIoH0dmlIAEXM/view?usp=sharing)
 * [05. PRS analysis](https://drive.google.com/file/d/1Edj5P-QJZ_suy6m9_z1hIErkdNxs8LZS/view?usp=sharing)
-* [06. 期末報告](https://drive.google.com/file/d/1WTmstrt1lfbwafVeaalf_Xcer0I16YQA/view?usp=sharing)
+* [06. 期末報告](https://drive.google.com/file/d/1e4T1Q_bjxEBFYu_gKvOvfAVaf-z7cpB9/view?usp=sharing)
 ---
 ## Homework
 1. Homework_rare_disease. (Deadline: 2023/08/30) Email to 翁惠瑩 iffive@gmail.com (https://drive.google.com/file/d/1HlF6EXqez9Uc70LV7yzxLnJ21JJhDhzc/view?usp=sharing)
