@@ -12,4 +12,5 @@
 ---
 ## Homework
 1. Homework_rare_disease. (Deadline: 2023/08/30) Email to 翁惠瑩 iffive@gmail.com (https://drive.google.com/file/d/1HlF6EXqez9Uc70LV7yzxLnJ21JJhDhzc/view?usp=sharing)
+2. Homework_PRS. (Deadline: 2023/09/30) Email to 鄭光桓 kenny77527@gapp.nthu.edu.tw (https://docs.google.com/document/d/1uOBgzsgLtXCn3zbZyEyLuVrcZw3Cvpy0/edit?usp=sharing&ouid=102502513340363871596&rtpof=true&sd=true)
 ---
