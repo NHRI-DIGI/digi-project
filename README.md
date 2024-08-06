@@ -11,6 +11,6 @@
 * [06. PRS analysis]
 * [07. Final report]
 ---
-## Homework
-
+## Team Work
+1. The team work is to analyze 5 HBOC pateients and predict P/LP variants in BRCA1, BRCA2, and PALB2 genes by ClinVar. Deadline: 8/15.
 ---
