@@ -1,0 +1,551 @@
+.
+├── Basedata
+│   ├── BasedataQC
+│   │   └── Output
+│   │       ├── completeqc.assoc.logistic
+│   │       ├── fail_indQC.txt
+│   │       ├── HBOC_p.bed
+│   │       ├── HBOC_p.bim
+│   │       ├── HBOC_p.fam
+│   │       ├── HBOC_p.log
+│   │       ├── HBOC_p.nosex
+│   │       ├── Logistic_manhattan.jpeg
+│   │       ├── logistic_results.assoc_2.logistic
+│   │       ├── logistic_results.assoc.logistic
+│   │       ├── logistic_results.log
+│   │       ├── logistic_results.nosex
+│   │       ├── process
+│   │       │   ├── Base_snpQCreport.txt
+│   │       │   ├── chr_pos
+│   │       │   ├── chr_xym_HBOC.vcf
+│   │       │   ├── covar_mds.txt
+│   │       │   ├── fail_het_ind.txt
+│   │       │   ├── fail_imiss_ind.txt
+│   │       │   ├── HBOC_Header_2.txt
+│   │       │   ├── HBOC_Headers.txt
+│   │       │   ├── HBOC.vcf
+│   │       │   ├── het_indQC.het
+│   │       │   ├── het_indQC.log
+│   │       │   ├── het_indQC.nosex
+│   │       │   ├── histhwe_below_theshold.pdf
+│   │       │   ├── histhwe.pdf
+│   │       │   ├── hwe_indQC_all.bed
+│   │       │   ├── hwe_indQC_all.bim
+│   │       │   ├── hwe_indQC_all.fam
+│   │       │   ├── hwe_indQC_all.log
+│   │       │   ├── hwe_indQC_all.nosex
+│   │       │   ├── hwe_indQC.bed
+│   │       │   ├── hwe_indQC.bim
+│   │       │   ├── hwe_indQC.fam
+│   │       │   ├── hwe_indQC.hwe
+│   │       │   ├── hwe_indQC.log
+│   │       │   ├── hwe_indQC.nosex
+│   │       │   ├── indepSNP.log
+│   │       │   ├── indepSNP.nosex
+│   │       │   ├── indepSNP.prune.in
+│   │       │   ├── indepSNP.prune.out
+│   │       │   ├── indQC.bed
+│   │       │   ├── indQC.bim
+│   │       │   ├── indQC.fam
+│   │       │   ├── indQC.log
+│   │       │   ├── indQC_nodup_chr_xym_HBOC.bed
+│   │       │   ├── indQC_nodup_chr_xym_HBOC.bim
+│   │       │   ├── indQC_nodup_chr_xym_HBOC.fam
+│   │       │   ├── indQC_nodup_chr_xym_HBOC.log
+│   │       │   ├── indQC_nodup_chr_xym_HBOC.nosex
+│   │       │   ├── indQC_nodup_chr_xym_pihat_extract_HBOC.genome
+│   │       │   ├── indQC_nodup_chr_xym_pihat_extract_HBOC.log
+│   │       │   ├── indQC_nodup_chr_xym_pihat_extract_HBOC_mds.cluster1
+│   │       │   ├── indQC_nodup_chr_xym_pihat_extract_HBOC_mds.cluster2
+│   │       │   ├── indQC_nodup_chr_xym_pihat_extract_HBOC_mds.cluster3
+│   │       │   ├── indQC_nodup_chr_xym_pihat_extract_HBOC_mds.log
+│   │       │   ├── indQC_nodup_chr_xym_pihat_extract_HBOC_mds.mds
+│   │       │   ├── indQC_nodup_chr_xym_pihat_extract_HBOC_mds.nosex
+│   │       │   ├── indQC_nodup_chr_xym_pihat_extract_HBOC.nosex
+│   │       │   ├── indQC_nodup_chr_xym_pihat_HBOC.bed
+│   │       │   ├── indQC_nodup_chr_xym_pihat_HBOC.bim
+│   │       │   ├── indQC_nodup_chr_xym_pihat_HBOC.fam
+│   │       │   ├── indQC_nodup_chr_xym_pihat_HBOC.genome
+│   │       │   ├── indQC_nodup_chr_xym_pihat_HBOC.log
+│   │       │   ├── indQC_nodup_chr_xym_pihat_HBOC.nosex
+│   │       │   ├── indQC_nodup_chr_xym_pihat_HBOC.rel.id
+│   │       │   ├── indQC_nodup_chr_xym_pihat_HBOC.vcf
+│   │       │   ├── indQC.nosex
+│   │       │   ├── indQC_snp_1_22.bed
+│   │       │   ├── indQC_snp_1_22.bim
+│   │       │   ├── indQC_snp_1_22.fam
+│   │       │   ├── indQC_snp_1_22.log
+│   │       │   ├── indQC_snp_1_22.nosex
+│   │       │   ├── MAF_check.frq
+│   │       │   ├── MAF_check.log
+│   │       │   ├── MAF_check.nosex
+│   │       │   ├── MAF_distribution.pdf
+│   │       │   ├── miss_indQC.imiss
+│   │       │   ├── miss_indQC.lmiss
+│   │       │   ├── miss_indQC.log
+│   │       │   ├── miss_indQC.nosex
+│   │       │   ├── nodup_chr_xym_HBOC.vcf
+│   │       │   ├── noh_chr_xym_HBOC.vcf
+│   │       │   ├── noh_xym_HBOC.vcf
+│   │       │   ├── pihat_min0.25.genome
+│   │       │   ├── pihat_min0.25.log
+│   │       │   ├── pihat_min0.25.nosex
+│   │       │   ├── select_hwe_indQC.hwe
+│   │       │   ├── snp_1_22.txt
+│   │       │   ├── snpQC_rowN.txt
+│   │       │   ├── xym_HBOC.vcf
+│   │       │   └── zoom_pihat.genome
+│   │       ├── QQ-Plot_logistic.jpeg
+│   │       ├── snpQC_base.log
+│   │       ├── snpQC_base.nosex
+│   │       └── snpQC_base.snplist
+│   ├── HBOC_base_phenotype.txt
+│   ├── log
+│   │   ├── H010001WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010002WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010003WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010004WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010005WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010006WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010007WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010008WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010009WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010010WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010011WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010012WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010013WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010014WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010015WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010016WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010017WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010018WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010019WGSB00_DP10_MAF21.vcf.log
+│   │   ├── H010020WGSB00_DP10_MAF21.vcf.log
+│   │   ├── HWGS10001_DP10_MAF21.vcf.log
+│   │   ├── HWGS10002_DP10_MAF21.vcf.log
+│   │   ├── HWGS10003_DP10_MAF21.vcf.log
+│   │   ├── HWGS10004_DP10_MAF21.vcf.log
+│   │   ├── HWGS10005_DP10_MAF21.vcf.log
+│   │   ├── HWGS10006_DP10_MAF21.vcf.log
+│   │   ├── HWGS10007_DP10_MAF21.vcf.log
+│   │   ├── HWGS10008_DP10_MAF21.vcf.log
+│   │   ├── HWGS10009_DP10_MAF21.vcf.log
+│   │   ├── HWGS10010_DP10_MAF21.vcf.log
+│   │   ├── HWGS10011_DP10_MAF21.vcf.log
+│   │   ├── HWGS10012_DP10_MAF21.vcf.log
+│   │   ├── HWGS10013_DP10_MAF21.vcf.log
+│   │   ├── HWGS10014_DP10_MAF21.vcf.log
+│   │   ├── HWGS10015_DP10_MAF21.vcf.log
+│   │   ├── HWGS10016_DP10_MAF21.vcf.log
+│   │   ├── HWGS10017_DP10_MAF21.vcf.log
+│   │   ├── HWGS10018_DP10_MAF21.vcf.log
+│   │   ├── HWGS10019_DP10_MAF21.vcf.log
+│   │   └── HWGS10020_DP10_MAF21.vcf.log
+│   ├── merge_base.sh
+│   ├── Outputdata
+│   │   ├── base_completeqc.assoc.logistic
+│   │   ├── base_fail_het_ind.txt
+│   │   ├── base_fail_imiss_ind.txt
+│   │   ├── base_het_indQC.het
+│   │   ├── base_histhwe_below_theshold.pdf
+│   │   ├── base_histhwe.pdf
+│   │   ├── base_Logistic_manhattan.jpeg
+│   │   ├── base_MAF_distribution.pdf
+│   │   ├── base_miss_indQC.imiss
+│   │   ├── base_QQ-Plot_logistic.jpeg
+│   │   └── Base_snpQCreport.txt
+│   ├── recode_vcf
+│   │   ├── H010001WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010001WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010001WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010002WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010002WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010002WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010003WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010003WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010003WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010004WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010004WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010004WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010005WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010005WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010005WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010006WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010006WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010006WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010007WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010007WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010007WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010008WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010008WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010008WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010009WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010009WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010009WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010010WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010010WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010010WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010011WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010011WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010011WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010012WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010012WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010012WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010013WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010013WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010013WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010014WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010014WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010014WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010015WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010015WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010015WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010016WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010016WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010016WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010017WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010017WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010017WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010018WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010018WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010018WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010019WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010019WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010019WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── H010020WGSB00_DP10_MAF21.vcf.recode.vcf
+│   │   ├── H010020WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── H010020WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10001_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10001_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10001_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10002_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10002_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10002_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10003_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10003_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10003_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10004_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10004_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10004_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10005_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10005_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10005_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10006_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10006_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10006_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10007_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10007_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10007_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10008_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10008_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10008_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10009_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10009_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10009_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10010_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10010_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10010_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10011_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10011_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10011_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10012_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10012_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10012_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10013_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10013_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10013_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10014_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10014_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10014_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10015_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10015_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10015_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10016_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10016_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10016_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10017_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10017_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10017_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10018_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10018_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10018_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10019_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10019_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10019_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   ├── HWGS10020_DP10_MAF21.vcf.recode.vcf
+│   │   ├── HWGS10020_DP10_MAF21.vcf.recode.vcf.gz
+│   │   ├── HWGS10020_DP10_MAF21.vcf.recode.vcf.gz.tbi
+│   │   └── merge_Base.list
+│   ├── tree_base.txt
+│   ├── VCF
+│   │   ├── Base.list
+│   │   ├── H010001WGSB00.vcf
+│   │   ├── H010002WGSB00.vcf
+│   │   ├── H010003WGSB00.vcf
+│   │   ├── H010004WGSB00.vcf
+│   │   ├── H010005WGSB00.vcf
+│   │   ├── H010006WGSB00.vcf
+│   │   ├── H010007WGSB00.vcf
+│   │   ├── H010008WGSB00.vcf
+│   │   ├── H010009WGSB00.vcf
+│   │   ├── H010010WGSB00.vcf
+│   │   ├── H010011WGSB00.vcf
+│   │   ├── H010012WGSB00.vcf
+│   │   ├── H010013WGSB00.vcf
+│   │   ├── H010014WGSB00.vcf
+│   │   ├── H010015WGSB00.vcf
+│   │   ├── H010016WGSB00.vcf
+│   │   ├── H010017WGSB00.vcf
+│   │   ├── H010018WGSB00.vcf
+│   │   ├── H010019WGSB00.vcf
+│   │   ├── H010020WGSB00.vcf
+│   │   ├── HWGS10001.vcf
+│   │   ├── HWGS10002.vcf
+│   │   ├── HWGS10003.vcf
+│   │   ├── HWGS10004.vcf
+│   │   ├── HWGS10005.vcf
+│   │   ├── HWGS10006.vcf
+│   │   ├── HWGS10007.vcf
+│   │   ├── HWGS10008.vcf
+│   │   ├── HWGS10009.vcf
+│   │   ├── HWGS10010.vcf
+│   │   ├── HWGS10011.vcf
+│   │   ├── HWGS10012.vcf
+│   │   ├── HWGS10013.vcf
+│   │   ├── HWGS10014.vcf
+│   │   ├── HWGS10015.vcf
+│   │   ├── HWGS10016.vcf
+│   │   ├── HWGS10017.vcf
+│   │   ├── HWGS10018.vcf
+│   │   ├── HWGS10019.vcf
+│   │   └── HWGS10020.vcf
+│   └── VCF_merge
+│       └── HBOC_40_merge.vcf
+├── basedata_targetdata_merge.txt
+├── Script
+│   ├── Basedata_modeling.sh
+│   ├── hwe.R
+│   ├── indQC.r
+│   ├── inversion.txt
+│   ├── MAF_check.R
+│   ├── Manhattan_plot.R
+│   ├── MDS_merged.R
+│   ├── QQ_plot.R
+│   ├── Relatedness.R
+│   ├── snpQCreport_base.r
+│   ├── snpQCreport_target.r
+│   └── Targetdat_modeling.sh
+└── Targetdata
+    ├── HBOC_target_phenotype.txt
+    ├── log
+    │   ├── H010021WGSB00_DP10_MAF21.vcf.log
+    │   ├── H010022WGSB00_DP10_MAF21.vcf.log
+    │   ├── H010023WGSB00_DP10_MAF21.vcf.log
+    │   ├── H010024WGSB00_DP10_MAF21.vcf.log
+    │   ├── H010025WGSB00_DP10_MAF21.vcf.log
+    │   ├── H010027WGSB00_DP10_MAF21.vcf.log
+    │   ├── H010028WGSB00_DP10_MAF21.vcf.log
+    │   ├── H010029WGSB00_DP10_MAF21.vcf.log
+    │   ├── H010030WGSB00_DP10_MAF21.vcf.log
+    │   ├── H010031WGSB00_DP10_MAF21.vcf.log
+    │   ├── HWGS10021_DP10_MAF21.vcf.log
+    │   ├── HWGS10022_DP10_MAF21.vcf.log
+    │   ├── HWGS10023_DP10_MAF21.vcf.log
+    │   ├── HWGS10024_DP10_MAF21.vcf.log
+    │   ├── HWGS10025_DP10_MAF21.vcf.log
+    │   ├── HWGS10026_DP10_MAF21.vcf.log
+    │   ├── HWGS10027_DP10_MAF21.vcf.log
+    │   ├── HWGS10028_DP10_MAF21.vcf.log
+    │   ├── HWGS10029_DP10_MAF21.vcf.log
+    │   └── HWGS10030_DP10_MAF21.vcf.log
+    ├── merge_target.sh
+    ├── Outputdata
+    │   ├── Target_completeqc.assoc.logistic
+    │   ├── Target_fail_het_ind.txt
+    │   ├── Target_fail_imiss_ind.txt
+    │   ├── Target_het_indQC.het
+    │   ├── Target_histhwe.pdf
+    │   ├── Target_MAF_distribution.pdf
+    │   └── Target_miss_indQC.imiss
+    ├── recode_vcf
+    │   ├── H010021WGSB00_DP10_MAF21.vcf.recode.vcf
+    │   ├── H010021WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── H010021WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── H010022WGSB00_DP10_MAF21.vcf.recode.vcf
+    │   ├── H010022WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── H010022WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── H010023WGSB00_DP10_MAF21.vcf.recode.vcf
+    │   ├── H010023WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── H010023WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── H010024WGSB00_DP10_MAF21.vcf.recode.vcf
+    │   ├── H010024WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── H010024WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── H010025WGSB00_DP10_MAF21.vcf.recode.vcf
+    │   ├── H010025WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── H010025WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── H010027WGSB00_DP10_MAF21.vcf.recode.vcf
+    │   ├── H010027WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── H010027WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── H010028WGSB00_DP10_MAF21.vcf.recode.vcf
+    │   ├── H010028WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── H010028WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── H010029WGSB00_DP10_MAF21.vcf.recode.vcf
+    │   ├── H010029WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── H010029WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── H010030WGSB00_DP10_MAF21.vcf.recode.vcf
+    │   ├── H010030WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── H010030WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── H010031WGSB00_DP10_MAF21.vcf.recode.vcf
+    │   ├── H010031WGSB00_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── H010031WGSB00_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── HWGS10021_DP10_MAF21.vcf.recode.vcf
+    │   ├── HWGS10021_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── HWGS10021_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── HWGS10022_DP10_MAF21.vcf.recode.vcf
+    │   ├── HWGS10022_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── HWGS10022_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── HWGS10023_DP10_MAF21.vcf.recode.vcf
+    │   ├── HWGS10023_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── HWGS10023_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── HWGS10024_DP10_MAF21.vcf.recode.vcf
+    │   ├── HWGS10024_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── HWGS10024_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── HWGS10025_DP10_MAF21.vcf.recode.vcf
+    │   ├── HWGS10025_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── HWGS10025_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── HWGS10026_DP10_MAF21.vcf.recode.vcf
+    │   ├── HWGS10026_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── HWGS10026_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── HWGS10027_DP10_MAF21.vcf.recode.vcf
+    │   ├── HWGS10027_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── HWGS10027_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── HWGS10028_DP10_MAF21.vcf.recode.vcf
+    │   ├── HWGS10028_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── HWGS10028_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── HWGS10029_DP10_MAF21.vcf.recode.vcf
+    │   ├── HWGS10029_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── HWGS10029_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   ├── HWGS10030_DP10_MAF21.vcf.recode.vcf
+    │   ├── HWGS10030_DP10_MAF21.vcf.recode.vcf.gz
+    │   ├── HWGS10030_DP10_MAF21.vcf.recode.vcf.gz.tbi
+    │   └── merge_Target.list
+    ├── TargetdataQC
+    │   └── Output
+    │       ├── completeqc.assoc.logistic
+    │       ├── fail_indQC.txt
+    │       ├── HBOC_p.bed
+    │       ├── HBOC_p.bim
+    │       ├── HBOC_p.fam
+    │       ├── HBOC_p.log
+    │       ├── HBOC_p.nosex
+    │       ├── logistic_results.assoc_2.logistic
+    │       ├── logistic_results.log
+    │       ├── process
+    │       │   ├── chr_pos
+    │       │   ├── chr_xym_HBOC.vcf
+    │       │   ├── covar_mds.txt
+    │       │   ├── fail_het_ind.txt
+    │       │   ├── fail_imiss_ind.txt
+    │       │   ├── HBOC_Header_2.txt
+    │       │   ├── HBOC_Headers.txt
+    │       │   ├── HBOC.vcf
+    │       │   ├── het_indQC.het
+    │       │   ├── het_indQC.log
+    │       │   ├── het_indQC.nosex
+    │       │   ├── histhwe.pdf
+    │       │   ├── hwe_indQC_all.bed
+    │       │   ├── hwe_indQC_all.bim
+    │       │   ├── hwe_indQC_all.fam
+    │       │   ├── hwe_indQC_all.log
+    │       │   ├── hwe_indQC_all.nosex
+    │       │   ├── hwe_indQC.bed
+    │       │   ├── hwe_indQC.bim
+    │       │   ├── hwe_indQC.fam
+    │       │   ├── hwe_indQC.hwe
+    │       │   ├── hwe_indQC.log
+    │       │   ├── hwe_indQC.nosex
+    │       │   ├── indepSNP.log
+    │       │   ├── indepSNP.nosex
+    │       │   ├── indepSNP.prune.in
+    │       │   ├── indepSNP.prune.out
+    │       │   ├── indQC.bed
+    │       │   ├── indQC.bim
+    │       │   ├── indQC.fam
+    │       │   ├── indQC.log
+    │       │   ├── indQC_nodup_chr_xym.cluster1
+    │       │   ├── indQC_nodup_chr_xym.cluster2
+    │       │   ├── indQC_nodup_chr_xym.cluster3
+    │       │   ├── indQC_nodup_chr_xym_HBOC.bed
+    │       │   ├── indQC_nodup_chr_xym_HBOC.bim
+    │       │   ├── indQC_nodup_chr_xym_HBOC.fam
+    │       │   ├── indQC_nodup_chr_xym_HBOC.log
+    │       │   ├── indQC_nodup_chr_xym_HBOC.nosex
+    │       │   ├── indQC_nodup_chr_xym.log
+    │       │   ├── indQC_nodup_chr_xym.mds
+    │       │   ├── indQC_nodup_chr_xym.nosex
+    │       │   ├── indQC_nodup_chr_xym_pihat_extract_HBOC.genome
+    │       │   ├── indQC_nodup_chr_xym_pihat_extract_HBOC.log
+    │       │   ├── indQC_nodup_chr_xym_pihat_extract_HBOC.nosex
+    │       │   ├── indQC_nodup_chr_xym_pihat_HBOC.bed
+    │       │   ├── indQC_nodup_chr_xym_pihat_HBOC.bim
+    │       │   ├── indQC_nodup_chr_xym_pihat_HBOC.fam
+    │       │   ├── indQC_nodup_chr_xym_pihat_HBOC.genome
+    │       │   ├── indQC_nodup_chr_xym_pihat_HBOC.log
+    │       │   ├── indQC_nodup_chr_xym_pihat_HBOC.nosex
+    │       │   ├── indQC_nodup_chr_xym_pihat_HBOC.rel.id
+    │       │   ├── indQC_nodup_chr_xym_pihat_HBOC.vcf
+    │       │   ├── indQC.nosex
+    │       │   ├── indQC_snp_1_22.bed
+    │       │   ├── indQC_snp_1_22.bim
+    │       │   ├── indQC_snp_1_22.fam
+    │       │   ├── indQC_snp_1_22.log
+    │       │   ├── indQC_snp_1_22.nosex
+    │       │   ├── MAF_check.frq
+    │       │   ├── MAF_check.log
+    │       │   ├── MAF_check.nosex
+    │       │   ├── MAF_distribution.pdf
+    │       │   ├── miss_indQC.imiss
+    │       │   ├── miss_indQC.lmiss
+    │       │   ├── miss_indQC.log
+    │       │   ├── miss_indQC.nosex
+    │       │   ├── nodup_chr_xym_HBOC.vcf
+    │       │   ├── noh_chr_xym_HBOC.vcf
+    │       │   ├── noh_xym_HBOC.vcf
+    │       │   ├── pihat_min0.25.genome
+    │       │   ├── pihat_min0.25.log
+    │       │   ├── pihat_min0.25.nosex
+    │       │   ├── select_hwe_indQC.hwe
+    │       │   ├── snp_1_22.txt
+    │       │   ├── snpQC_rowN.txt
+    │       │   ├── xym_HBOC.vcf
+    │       │   └── zoom_pihat.genome
+    │       ├── snpQC_Target.log
+    │       ├── snpQC_Target.nosex
+    │       └── snpQC_Target.snplist
+    ├── tree_trarget.txt
+    ├── VCF
+    │   ├── H010021WGSB00.vcf
+    │   ├── H010022WGSB00.vcf
+    │   ├── H010023WGSB00.vcf
+    │   ├── H010024WGSB00.vcf
+    │   ├── H010025WGSB00.vcf
+    │   ├── H010027WGSB00.vcf
+    │   ├── H010028WGSB00.vcf
+    │   ├── H010029WGSB00.vcf
+    │   ├── H010030WGSB00.vcf
+    │   ├── H010031WGSB00.vcf
+    │   ├── HWGS10021.vcf
+    │   ├── HWGS10022.vcf
+    │   ├── HWGS10023.vcf
+    │   ├── HWGS10024.vcf
+    │   ├── HWGS10025.vcf
+    │   ├── HWGS10026.vcf
+    │   ├── HWGS10027.vcf
+    │   ├── HWGS10028.vcf
+    │   ├── HWGS10029.vcf
+    │   ├── HWGS10030.vcf
+    │   └── Target.list
+    └── VCF_merge
+        └── HBOC_20_merge.vcf
+
+19 directories, 529 files
