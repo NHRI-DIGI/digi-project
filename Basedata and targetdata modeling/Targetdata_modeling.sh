@@ -1,0 +1,216 @@
+# Build output route, and the pheno name -> phenoarray
+# Merge VCF in merge_dir
+# tool in ${tools}
+# case and control txt file in ${pathway}Input/Laptop_input/
+### Important!!!! Make sure the chr = 1 or chr1
+pathway='/NovaSeq_128/Kenny/Digit_2024/PRS/Targetdata/'
+Targetdata_merge_vcf='HBOC_20_merge.vcf'
+phenoarray=HBOC
+tools='/NovaSeq_128/Kenny/tool/bin/'
+script='/NovaSeq_128/Kenny/Digit_2024/PRS/Script/'
+phenotype_txt='HBOC_target_phenotype.txt'
+#===========================================================
+
+mkdir ${pathway}TargetdataQC ${pathway}Outputdata
+cd ${pathway}TargetdataQC
+mkdir Output
+cd Output
+mkdir process
+
+# Make Heaader
+cat ${pathway}VCF_merge/"$Targetdata_merge_vcf" | egrep "^##" > process/"$phenoarray"_Headers.txt
+sed '/^##/d' ${pathway}VCF_merge/"$Targetdata_merge_vcf" > process/"$phenoarray".vcf
+head -n1 process/"$phenoarray".vcf > process/"$phenoarray"_Header_2.txt
+
+# CHR: X->23 Y->24 M->25 (avoid Invalid variant bp coordinate ERROR afterward)
+awk -F'\t' -vOFS='\t' '/^#/ {next}; {gsub("X", "23", $1) ; gsub("Y", "24", $1); gsub("M", "25", $1); print}' process/"$phenoarray".vcf > process/noh_xym_"$phenoarray".vcf
+cat process/"$phenoarray"_Header_2.txt process/noh_xym_"$phenoarray".vcf > process/xym_"$phenoarray".vcf
+
+# Replace ID to chr_POS, Remove Duplicate SNPs
+awk 'BEGIN{OFS="_";}  NR==1{print $2} NR >1{print $1,$2}' process/xym_"$phenoarray".vcf > process/chr_pos
+# If original vcf file chr column = chr1... must do the code below.
+# If not, don't do it.
+sed -e 's/^chr//' -i process/chr_pos
+awk 'FNR==NR{a[NR]=$0;next} {$3=a[FNR]}1' OFS="\t" process/chr_pos  process/xym_"$phenoarray".vcf > process/noh_chr_xym_"$phenoarray".vcf
+( sed 1q process/"$phenoarray"_Header_2.txt; sed 1d process/noh_chr_xym_"$phenoarray".vcf ) > process/chr_xym_"$phenoarray".vcf
+awk '{seen[$3]++; if(seen[$3]==1){ print}}' process/chr_xym_"$phenoarray".vcf > process/nodup_chr_xym_"$phenoarray".vcf
+
+# Indiviual QC
+${tools}plink --vcf process/nodup_chr_xym_"$phenoarray".vcf --make-bed --out process/indQC --double-id
+${tools}plink --bfile process/indQC --missing --out process/miss_indQC
+${tools}plink --bfile process/indQC --het --out process/het_indQC
+Rscript ${script}indQC.r
+
+### Step1 #########################################
+#/NovaSeq_128/Kenny/tool/bin/plink --vcf 7_cohorts_2569_TWreference.vcf --make-bed --out 7_cohorts_2569_TWreference
+# Check for sex discrepancy.
+# Subjects who were a priori determined as females must have a F value of <0.2, and subjects who were a priori determined as males must have a F value >0.8. This F value is Targetd on the X chromosome inbreeding (homozygosity) estimate.
+# Subjects who do not fulfil these requirements are flagged "PROBLEM" by PLINK.
+
+#/NovaSeq_128/Kenny/tool/bin/plink --vcf TWB_1454.merge.vcf --check-sex --out TWB_1454_sex_check
+#/NovaSeq_128/Kenny/tool/bin/plink --vcf HALST_new_944.vcf --check-sex --out HALST_new_944_sex_check
+# Generate plots to visualize the sex-check results.
+#Rscript --no-save gender_check.R
+# These checks indicate that there is one woman with a sex discrepancy, F value of 0.99. (When using other datasets often a few discrepancies will be found).
+
+# The following two scripts can be used to deal with individuals with a sex discrepancy.
+# Note, please use one of the two options below to generate the bfile hapmap_r23a_6, this file we will use in the next step of this tutorial.
+
+# 1) Delete individuals with sex discrepancy.
+#grep "PROBLEM" plink.sexcheck| awk '{print$1,$2}'> sex_discrepancy.txt
+# This command generates a list of individuals with the status �PROBLEM�.
+#${tools}plink --bfile HapMap_3_r3_5 --remove sex_discrepancy.txt --make-bed --out HapMap_3_r3_6
+# This command removes the list of individuals with the status �PROBLEM�.
+
+# 2) impute-sex.
+#plink --bfile HapMap_3_r3_5 --impute-sex --make-bed --out HapMap_3_r3_6
+# This imputes the sex Targetd on the genotype information into your data set.
+
+###################################################
+### Step 3 ###
+# Generate a bfile with autosomal SNPs only and delete SNPs with a low minor allele frequency (MAF).
+
+# Select autosomal SNPs only (i.e., from chromosomes 1 to 22).
+awk '{ if ($1 >= 1 && $1 <= 22) print $2 }' process/indQC.bim > process/snp_1_22.txt
+${tools}plink --bfile process/indQC --extract process/snp_1_22.txt --make-bed --out process/indQC_snp_1_22
+
+# Generate a plot of the MAF distribution.
+${tools}plink --bfile process/indQC_snp_1_22 --freq --out process/MAF_check
+Rscript --no-save ${script}MAF_check.R
+cp process/MAF_distribution.pdf ../../Outputdata/
+mv ../../Outputdata/MAF_distribution.pdf ../../Outputdata/Target_MAF_distribution.pdf
+####################################################
+### Step 4 ###
+
+# Delete SNPs which are not in Hardy-Weinberg equilibrium (HWE).
+# Check the distribution of HWE p-values of all SNPs.
+
+${tools}plink --bfile process/indQC --hardy --out process/hwe_indQC
+# Selecting SNPs with HWE p-value below 0.000001, required for one of the two plot generated by the next Rscript, allows to zoom in on strongly deviating SNPs.
+awk '{ if ($9 < 0.000001) print $0 }' process/hwe_indQC.hwe > process/select_hwe_indQC.hwe
+Rscript --no-save ${script}hwe.R
+cp process/histhwe.pdf ../../Outputdata/
+mv ../../Outputdata/histhwe.pdf ../../Outputdata/Target_histhwe.pdf
+cp process/histhwe_below_theshold.pdf ../../Outputdata/
+mv ../../Outputdata/histhwe_below_theshold.pdf ../../Outputdata/Target_histhwe_below_theshold.pdf
+
+# By default the --hwe option in plink only filters for controls.
+# Therefore, we use two steps, first we use a stringent HWE threshold for controls, followed by a less stringent threshold for the case data.
+${tools}plink --bfile process/indQC --hwe 1e-6 --make-bed --out process/hwe_indQC
+
+# The HWE threshold for the cases filters out only SNPs which deviate extremely from HWE.
+# This second HWE step only focusses on cases because in the controls all SNPs with a HWE p-value < hwe 1e-6 were already removed
+${tools}plink --bfile process/hwe_indQC --hwe 1e-10 --hwe-all --make-bed --out process/hwe_indQC_all
+
+### step 5 ###
+
+# Generate a list of non-(highly)correlated SNPs, we exclude high inversion regions (inversion.txt [High LD regions]) and prune the SNPs using the command --indep-pairwise�.
+# The parameters 50 5 0.2 stand respectively for: the window size, the number of SNPs to shift the window at each step, and the multiple correlation coefficient for a SNP being regressed on all other SNPs simultaneously.
+
+${tools}plink --bfile process/hwe_indQC_all --exclude ${script}inversion.txt --range --indep-pairwise 50 5 0.2 --out process/indepSNP
+# Note, don't delete the file indepSNP.prune.in, we will use this file in later steps of the tutorial.
+####################################################
+
+cp process/miss_indQC.imiss ../../Outputdata/
+mv ../../Outputdata/miss_indQC.imiss ../../Outputdata/Target_miss_indQC.imiss
+cp process/het_indQC.het ../../Outputdata/
+mv ../../Outputdata/het_indQC.het ../../Outputdata/Target_het_indQC.het
+cp process/fail_imiss_ind.txt ../../Outputdata/
+mv ../../Outputdata/fail_imiss_ind.txt ../../Outputdata/Target_fail_imiss_ind.txt
+cp process/fail_het_ind.txt ../../Outputdata/
+mv ../../Outputdata/fail_het_ind.txt ../../Outputdata/Target_fail_het_ind.txt
+cat process/fail_het_ind.txt  process/fail_imiss_ind.txt | sort -k1 | uniq > fail_indQC.txt
+${tools}plink --bfile process/hwe_indQC_all --remove fail_indQC.txt --make-bed  --out process/indQC_nodup_chr_xym_"$phenoarray" --double-id
+
+### step 6 ###
+
+# It is essential to check datasets you analyse for cryptic relatedness.
+# Assuming a random population sample we are going to exclude all individuals above the pihat threshold of 0.25 in this tutorial.
+# PI_HAT＝0 無親緣關係, PI_HAT＝0.25 表兄弟, PI_HAT＝0.5 親子或兄弟姐妹, PI_HAT＝1 本人或同卵双胞胎
+# Check for relationships between individuals with a pihat > 0.25.
+${tools}plink --bfile process/indQC_nodup_chr_xym_"$phenoarray" --extract process/indepSNP.prune.in --genome --min 0.25 --out process/pihat_min0.25
+
+# The HapMap dataset is known to contain parent-offspring relations.
+# The following commands will visualize specifically these parent-offspring relations, using the z values.
+awk '{ if ($8 >0.9) print $0 }' process/pihat_min0.25.genome > process/zoom_pihat.genome
+
+# Generate a plot to assess the type of relationship.
+Rscript --no-save ${pathway}Script/Relatedness.R
+cp process/hist_relatedness.pdf ../../Outputdata/
+cp process/zoom_relatedness.pdf ../../Outputdata/
+cp process/relatedness.pdf ../../Outputdata/
+# The generated plots show a considerable amount of related individuals (explentation plot; PO = parent-offspring, UN = unrelated individuals) in the Hapmap data, this is expected since the dataset was constructed as such.
+# Normally, family Targetd data should be analyzed using specific family Targetd methods. In this tutorial, for demonstrative purposes, we treat the relatedness as cryptic relatedness in a random population sample.
+# In this tutorial, we aim to remove all 'relatedness' from our dataset.
+
+# Delete the individuals with a pihat > 0.25
+${tools}plink --bfile process/indQC_nodup_chr_xym_"$phenoarray" --genome --grm-cutoff 0.25 --make-bed --out process/indQC_nodup_chr_xym_pihat_"$phenoarray"
+
+### step 7 ###
+## Create covariates based on MDS.
+# Perform an MDS ONLY on HapMap data without ethnic outliers. The values of the 10 MDS dimensions are subsequently used as covariates in the association analysis in the third tutorial.
+${tools}plink --bfile process/indQC_nodup_chr_xym_pihat_"$phenoarray" --extract process/indepSNP.prune.in --genome --out process/indQC_nodup_chr_xym_pihat_extract_"$phenoarray"
+${tools}plink --bfile process/indQC_nodup_chr_xym_pihat_"$phenoarray" --read-genome process/indQC_nodup_chr_xym_pihat_extract_"$phenoarray".genome --cluster --mds-plot 10 --out process/indQC_nodup_chr_xym
+_pihat_extract_"$phenoarray"_mds
+# Change the format of the .mds file into a plink covariate file.
+awk '{print$1, $2, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13}' process/indQC_nodup_chr_xym_pihat_extract_"$phenoarray"_mds.mds > process/covar_mds.txt
+# The values in covar_mds.txt will be used as covariates, to adjust for remaining population stratification, in the third tutorial where we will perform a genome-wide association analysis.
+
+${tools}plink --bfile process/indQC_nodup_chr_xym_pihat_"$phenoarray" --recode vcf-iid --out process/indQC_nodup_chr_xym_pihat_"$phenoarray"
+sed -i '/^##/d' process/indQC_nodup_chr_xym_pihat_"$phenoarray".vcf
+
+# Add phenotype info (Every pheno output call "$phenoarray"_p)
+${tools}plink --vcf process/indQC_nodup_chr_xym_pihat_"$phenoarray".vcf \
+--pheno ${pathway}"$phenotype_txt" \
+--pheno-name phenotype \
+--make-bed \
+--out "$phenoarray"_p \
+--double-id \
+--all-pheno \
+--pheno-merge
+
+# SNP QC (Do only one pheno) maf = 0.01
+${tools}plink \
+    --bfile "$phenoarray"_p \
+    --allow-no-sex \
+    --maf 0.01 \
+    --hwe 1e-6 \
+    --geno 0.01 \
+    --write-snplist \
+    --out snpQC_Target
+
+# Export SNP QC report
+preQC=$(< "process/chr_xym_"$phenoarray".vcf" wc -l )
+nodup=$(< "process/nodup_chr_xym_"$phenoarray".vcf" wc -l )
+sQC=$(< "snpQC_Target.snplist" wc -l )
+echo $preQC $nodup $sQC > process/snpQC_rowN.txt
+Rscript ${script}snpQCreport_Target.r
+cp process/Target_snpQCreport.txt ../../Outputdata/
+
+# Association Test-logistic
+# We will be using 10 principal components as covariates in this logistic analysis. We use the MDS components calculated from the previous tutorial: covar_mds.txt.
+${tools}plink --bfile "$phenoarray"_p --covar process/covar_mds.txt --logistic --allow-no-sex --hide-covar --ci 0.xy --out logistic_results
+# Note, we use the option -�hide-covar to only show the additive results of the SNPs in the output file.
+
+# Remove NA values, those might give problems generating plots in later steps.
+awk '!/'NA'/' logistic_results.assoc.logistic > completeqc.assoc.logistic
+# The results obtained from these GWAS analyses will be visualized in the last step. This will also show if the data set contains any genome-wide significant SNPs.
+
+# Note, in case of a quantitative outcome measure the option --logistic should be replaced by --linear. The use of the --assoc option is also possible for quantitative outcome measures (as metioned previously, this option does not allow the use of covariates).
+#################################################################
+
+# Generate Manhattan and QQ plots.
+
+# These scripts assume R >= 3.0.0.
+# If you changed the name of the .assoc file or to the assoc.logistic file, please assign those names also to the Rscripts for the Manhattan and QQ plot, otherwise the scripts will not run.
+
+# The following Rscripts require the R package qqman, the scripts provided will automatically download this R package and install it in /home/{user}/ . Additionally, the scripts load the qqman library and can therefore, similar to all other Rscript on this GitHub page, be executed from the command line.
+# This location can be changed to your desired directory
+
+Rscript --no-save ${script}Manhattan_plot.R
+Rscript --no-save ${script}QQ_plot.R
+cp *.jpeg ../../Outputdata/
+mv ../../Outputdata/Logistic_manhattan.jpeg ../../Outputdata/Target_Logistic_manhattan.jpeg
+mv ../../Outputdata/QQ-Plot_logistic.jpeg ../../Outputdata/Target_QQ-Plot_logistic.jpeg
+cp completeqc.assoc.logistic ../../Outputdata/
+mv ../../Outputdata/completeqc.assoc.logistic ../../Outputdata/Target_completeqc.assoc.logistic
