@@ -189,7 +189,7 @@ cp process/Target_snpQCreport.txt ../../Outputdata/
 
 # Association Test-logistic
 # We will be using 10 principal components as covariates in this logistic analysis. We use the MDS components calculated from the previous tutorial: covar_mds.txt.
-${tools}plink --bfile "$phenoarray"_p --covar process/covar_mds.txt --logistic --allow-no-sex --hide-covar --ci 0.xy --out logistic_results
+${tools}plink --bfile "$phenoarray"_p --covar process/covar_mds.txt --logistic --allow-no-sex --hide-covar --out logistic_results
 # Note, we use the option -�hide-covar to only show the additive results of the SNPs in the output file.
 
 # Remove NA values, those might give problems generating plots in later steps.
