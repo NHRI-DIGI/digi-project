@@ -8,7 +8,7 @@
 * [03. Merge VCFs](https://drive.google.com/file/d/1zMtwp0eTLg8F8uIh8yTmDYA_ZSZAR8uK/view?usp=sharing)
 * [04. Base and target data modeling](https://drive.google.com/file/d/1Z-odPLeU6WrA_5Znnqq6Cj2zepyINFFI/view?usp=sharing)
 * [05. PRS modeling](https://drive.google.com/file/d/188w9Pb7QcYp0R2sLDsYNwdPNA34g7d7p/view?usp=sharing)
-* [06. Final report]
+* [06. Final project](https://drive.google.com/file/d/1KPrQ-CItRaQt3QtE5TpjFK80QrWvxf1p/view?usp=sharing)
 ---
 ## Team Work
 1. The team work is to analyze 5 HBOC pateients and predict P/LP variants in BRCA1, BRCA2, and PALB2 genes by ClinVar. Deadline: 8/15.
