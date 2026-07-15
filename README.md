@@ -15,6 +15,20 @@ java -jar /NovaSeq_128/Digit_2024/tool/bin/beagle.27Feb25.75f.jar \
 echo 'export PATH=/usr/local/genome/GLIMPSE-1.1.1/phase/bin:$PATH' >> ~/.bashrc
 echo 'export PATH=/usr/local/genome/GLIMPSE-1.1.1/ligate/bin:$PATH' >> ~/.bashrc
 echo 'export PATH=/usr/local/genome/bcftools-1.17/bin:$PATH’ >> ~/.bashrc
+* Chunking a chromosome
+* INDIR=/NovaSeq_128/Digit_2024/[Name]
+OUTDIR=/NovaSeq_128/Digit_2024/[Name]/For_GLIMPSE
+
+for chr in 22; do
+ /home/lyf/GLIMPSE-1.1.1/chunk/bin/GLIMPSE_chunk \
+    --input ${INDIR}/TWReference_2500_MAF00002_chr${chr}_rmmulti_phasing.vcf.gz \
+    --region chr${chr} \
+    --window-size 2000000 \
+    --buffer-size 200000 \
+    --output ${OUTDIR}/chunks.chr${chr}.Glimpse.txt \
+    --log ${OUTDIR}/chunk.chr${chr}.log
+
+done
 
 Bash configuration reload
 source ~/.bashrc
