@@ -12,9 +12,11 @@ java -jar /NovaSeq_128/Digit_2024/tool/bin/beagle.27Feb25.75f.jar \
   out=/NovaSeq_128/Digit_2024/[Name]/[Output_name] ex: Test_chr22
 * Environment variables configuration
 * echo 'export PATH=/usr/local/genome/GLIMPSE-1.1.1/chunk/bin:$PATH' >> ~/.bashrc
-echo 'export PATH=/usr/local/genome/GLIMPSE-1.1.1/phase/bin:$PATH' >> ~/.bashrc
-echo 'export PATH=/usr/local/genome/GLIMPSE-1.1.1/ligate/bin:$PATH' >> ~/.bashrc
-echo 'export PATH=/usr/local/genome/bcftools-1.17/bin:$PATH’ >> ~/.bashrc
+* echo 'export PATH=/usr/local/genome/GLIMPSE-1.1.1/phase/bin:$PATH' >> ~/.bashrc
+* echo 'export PATH=/usr/local/genome/GLIMPSE-1.1.1/ligate/bin:$PATH' >> ~/.bashrc
+* echo 'export PATH=/usr/local/genome/bcftools-1.17/bin:$PATH’ >> ~/.bashrc
+
+
 * Chunking a chromosome
 * INDIR=/NovaSeq_128/Digit_2024/[Name]
 OUTDIR=/NovaSeq_128/Digit_2024/[Name]/For_GLIMPSE
@@ -27,7 +29,6 @@ for chr in 22; do
     --buffer-size 200000 \
     --output ${OUTDIR}/chunks.chr${chr}.Glimpse.txt \
     --log ${OUTDIR}/chunk.chr${chr}.log
-
 done
 
 Bash configuration reload
