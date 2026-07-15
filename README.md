@@ -39,17 +39,14 @@ REFDIR=/NovaSeq_128/Digit_2024/[Name]/For_GLIMPSE/reference_genome
 
 for BAM in ${INDIR}/*.bam; do
     SAMPLE=$(basename ${BAM} .bam)
-
     for i in 22; do
         mkdir -p ${OUTDIR}/chr${i}
         VCF=${VCFDIR}/TWReference_2500_MAF00002_chr${i}_rmmulti_phasing.sites.vcf.gz
         TSV=${VCFDIR}/TWReference_2500_MAF00002_chr${i}_rmmulti_phasing.sites.tsv.gz
         REF=${REFDIR}/hs38DH.chr${i}.fa
         OUT=${OUTDIR}/chr${i}/${SAMPLE}.chr${i}.vcf.gz
-
         bcftools mpileup -f ${REF} -I -E -a FORMAT/DP -T ${VCF} -r chr${i} ${BAM} -Ou | \
         bcftools call -Aim -C alleles -T ${TSV} -Oz -o ${OUT}
-
         bcftools index -f ${OUT}
     done
 done
