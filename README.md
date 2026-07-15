@@ -9,8 +9,7 @@ java -jar /NovaSeq_128/Digit_2024/tool/bin/beagle.27Feb25.75f.jar \
   ref=/NovaSeq_128/Digit_2024/[Name]/TWReference_2500_MAF00002_chr22_rmmulti_phasing.vcf.gz \
   map=/NovaSeq_128/Digit_2024/[Name]/chr22.GRCh38.map \
   gp=true \
-  out=/NovaSeq_128/Digit_2024/[Name]/[Output_name] ex: Test_chr22
-* Environment variables configuration
+  out=/NovaSeq_128/Digit_2024/[Name]/[Output_name] ex: Test_chr22* Environment variables configuration
 * echo 'export PATH=/usr/local/genome/GLIMPSE-1.1.1/chunk/bin:$PATH' >> ~/.bashrc
 * echo 'export PATH=/usr/local/genome/GLIMPSE-1.1.1/phase/bin:$PATH' >> ~/.bashrc
 * echo 'export PATH=/usr/local/genome/GLIMPSE-1.1.1/ligate/bin:$PATH' >> ~/.bashrc
