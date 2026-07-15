@@ -10,7 +10,6 @@ java -jar /NovaSeq_128/Digit_2024/tool/bin/beagle.27Feb25.75f.jar \
   map=/NovaSeq_128/Digit_2024/[Name]/chr22.GRCh38.map \
   gp=true \
   out=/NovaSeq_128/Digit_2024/[Name]/[Output_name] ex: Test_chr22
-* 
 * [02. For beginner of Linux](https://drive.google.com/file/d/1Rv-wirTVwoVo0o7aL1jU59XEmkkgQLfz/view?usp=sharing)
 ---
 
