@@ -31,8 +31,29 @@ for chr in 22; do
     --log ${OUTDIR}/chunk.chr${chr}.log
 done
 
-Bash configuration reload
-source ~/.bashrc
+* Compute genotype likelihoods (GLs) for individual samples at specified variant positions
+INDIR=/NovaSeq_128/Digit_2024/[Name]/For_GLIMPSE/lcWGS_demo_bam
+OUTDIR=/NovaSeq_128/Digit_2024/[Name]/For_GLIMPSE/GT_by_Ref
+VCFDIR=/NovaSeq_128/Digit_2024/[Name]
+REFDIR=/NovaSeq_128/Digit_2024/[Name]/For_GLIMPSE/reference_genome
+
+for BAM in ${INDIR}/*.bam; do
+    SAMPLE=$(basename ${BAM} .bam)
+
+    for i in 22; do
+        mkdir -p ${OUTDIR}/chr${i}
+        VCF=${VCFDIR}/TWReference_2500_MAF00002_chr${i}_rmmulti_phasing.sites.vcf.gz
+        TSV=${VCFDIR}/TWReference_2500_MAF00002_chr${i}_rmmulti_phasing.sites.tsv.gz
+        REF=${REFDIR}/hs38DH.chr${i}.fa
+        OUT=${OUTDIR}/chr${i}/${SAMPLE}.chr${i}.vcf.gz
+
+        bcftools mpileup -f ${REF} -I -E -a FORMAT/DP -T ${VCF} -r chr${i} ${BAM} -Ou | \
+        bcftools call -Aim -C alleles -T ${TSV} -Oz -o ${OUT}
+
+        bcftools index -f ${OUT}
+    done
+done
+
 * [02. For beginner of Linux](https://drive.google.com/file/d/1Rv-wirTVwoVo0o7aL1jU59XEmkkgQLfz/view?usp=sharing)
 ---
 
