@@ -11,7 +11,7 @@ INDIR=/NovaSeq_128/Digit_2024/[Name]
 OUTDIR=/NovaSeq_128/Digit_2024/[Name]/For_GLIMPSE
 
 for chr in 22; do
- /home/lyf/GLIMPSE-1.1.1/chunk/bin/GLIMPSE_chunk \
+ GLIMPSE_chunk \
     --input ${INDIR}/TWReference_2500_MAF00002_chr${chr}_rmmulti_phasing.vcf.gz \
     --region chr${chr} \
     --window-size 2000000 \
@@ -66,7 +66,7 @@ for i in 22; do
     while IFS=$'\t' read -r ID CHR2 IRG ORG WINDOW_CM WINDOW_BP COUNT1 COUNT2 || [[ -n "$ID" ]]; do
         [[ -z "$ID" ]] && continue
         OUT="${OUTPUT_DIR}/${ID}_${IRG//:/_}.vcf.gz"
-        /home/lyf/GLIMPSE-1.1.1/phase/bin/GLIMPSE_phase \
+        GLIMPSE_phase \
             --input "${BASE_VCF_DIR}/${CHR}/Merge.${CHR}.vcf.gz" --reference "${REF_DIR}/TWReference_2500_MAF00002_${CHR}_rmmulti_phasing.vcf.gz" \
             --map "${MAP_DIR}/${CHR}.b38.gmap.fixed.gz" --input-region "${IRG}" --output-region "${ORG}" \
             --output "${OUT}" --seed 15052011 --burnin 2 --main 2 --thread 25
@@ -82,7 +82,7 @@ for i in 22; do
 
     ls ${DIR}/*.vcf.gz > ${DIR}/list.${CHR}.txt
 
-    /home/lyf/GLIMPSE-1.1.1/ligate/bin/GLIMPSE_ligate \
+    GLIMPSE_ligate \
         --input ${DIR}/list.${CHR}.txt \
         --output ${DIR}/Merge.${CHR}.Impute.vcf.gz
 
