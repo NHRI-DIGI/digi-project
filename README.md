@@ -18,7 +18,7 @@ java -jar /NovaSeq_128/Digit_2024/tool/bin/beagle.27Feb25.75f.jar \
 
 
 * Chunking a chromosome
-* INDIR=/NovaSeq_128/Digit_2024/[Name]
+INDIR=/NovaSeq_128/Digit_2024/[Name]
 OUTDIR=/NovaSeq_128/Digit_2024/[Name]/For_GLIMPSE
 
 for chr in 22; do
